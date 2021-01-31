@@ -20,5 +20,6 @@ python subtitle_translator.py
 
 ### Note
 
-This script translates subtitles from English to Persian. Tell me if you want to add a feature to
-translate from any to any language.
+This script translates subtitles from English to Persian.
+
+Tell me if you want to add a feature to translate from any to any language.
