@@ -31,3 +31,16 @@ for root, dirs, files in os.walk("./put_files_here"):
                 translate_and_compose(source_file, dest_file, 'en', 'fa', mode='naive', both=False)
                 print(f'translated "{name}"')
                 time.sleep(3)
+
+while True:
+    delete_backup_subtitles = input("Remove backup backup subtitles? (y/n)\n").strip(" \n")
+    if delete_backup_subtitles == "y":
+        for root, dirs, files in os.walk("./put_files_here"):
+            for name in files:
+                if re.match(r".*(?<!-\w{2})\.srt\.backup$", name):
+                    folder = os.path.abspath(root)
+                    file_to_remove = os.path.join(folder, name)
+                    os.remove(file_to_remove)
+        break
+    elif delete_backup_subtitles == "n":
+        break
